@@ -27,6 +27,8 @@ switch (operation)
         Console.WriteLine($"Результат: {num1} * {num2} = {result}");
         break;
     case "/":
+        result = num1 / num2;
+        Console.WriteLine($"Результат: {num1} / {num2} = {result}");
         break;
 
 }
