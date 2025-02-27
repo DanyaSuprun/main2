@@ -1,0 +1,34 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] arr = { 12, 35, 1, 10, 34, 1 };
+
+        int firstMax = int.MinValue;
+        int secondMax = int.MinValue;
+
+        foreach (var num in arr)
+        {
+            if (num > firstMax)
+            {
+                secondMax = firstMax;
+                firstMax = num;
+            }
+            else if (num > secondMax && num != firstMax)
+            {
+                secondMax = num;
+            }
+        }
+
+        if (secondMax == int.MinValue)
+        {
+            Console.WriteLine("Другий найбільший елемент не знайдено.");
+        }
+        else
+        {
+            Console.WriteLine("Другий найбільший елемент: " + secondMax);
+        }
+    }
+}
