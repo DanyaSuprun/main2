@@ -1,0 +1,47 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[,] arr = {
+            { 12, 35, 1 },
+            { 10, 34, 1 },
+            { 2, 15, 7 }
+        };
+
+        int rows = arr.GetLength(0);
+        int cols = arr.GetLength(1);
+        int[] flatArr = new int[rows * cols];
+        
+        int index = 0;
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                flatArr[index++] = arr[i, j];
+            }
+        }
+   
+        Array.Sort(flatArr);
+     
+        index = 0;
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                arr[i, j] = flatArr[index++];
+            }
+        }
+
+        
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                Console.Write(arr[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
