@@ -1,0 +1,26 @@
+using System;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        int[] arr = { 1, 2, 3, 4, 5 };
+        int indexToRemove = 2; 
+
+        if (indexToRemove < 0 || indexToRemove >= arr.Length)
+        {
+            Console.WriteLine("Невірний індекс.");
+        }
+        else
+        {
+            arr = arr.Where((val, index) => index != indexToRemove).ToArray();
+
+            Console.WriteLine("Масив після видалення:");
+            foreach (var num in arr)
+            {
+                Console.Write(num + " ");
+            }
+        }
+    }
+}
